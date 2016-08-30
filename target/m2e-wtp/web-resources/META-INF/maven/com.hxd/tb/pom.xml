@@ -156,19 +156,8 @@
             <artifactId>commons-codec</artifactId>  
             <version>1.9</version>  
         </dependency>  
-        <!--apache common-lang工具类  -->
-   	    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-		<dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
-        </dependency>
-        <!--dom4J依赖jar  -->
-    <dependency>
-    <groupId>dom4j</groupId>
-    <artifactId>dom4j</artifactId>
-    <version>1.6.1</version>
-     </dependency>
+    
+    
     
   </dependencies>
   <build>
