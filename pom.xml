@@ -137,6 +137,19 @@
             <artifactId>jackson-mapper-asl</artifactId>  
             <version>1.9.13</version>  
     </dependency>
+    
+    <!-- ehcache 依赖jar -->
+
+	<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.10.2</version>
+	</dependency>
+    
+	
+    
+  
+    
       
     <!--上传依赖 jar  -->
         <dependency>  
