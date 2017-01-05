@@ -32,6 +32,8 @@
 	<beans:import resource="classpath:spring/cache/spring-ehcache.xml"/> 
 	<!-- <beans:import resource="classpath:spring/cache/spring-rediscache.xml"/> -->
 	
+	<!-- 引入安全框架shiro -->
+	<beans:import resource="classpath:spring/shiro/spring-shiro.xml"/>
 	
 	
 	
