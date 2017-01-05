@@ -18,18 +18,24 @@
 	default-autowire="byName">
 	
        
-    <!-- 引入redis -->
-	<beans:import resource="classpath:spring/redis/redis-pool.xml"/>
-	
-	<!-- redis 连接工厂 -->
-	<bean id="cacheJedisConnectionFactory" class="org.walkframework.redis.BaseJedisConnectionFactory">
-		<property name="usePool" value="true"/>
-		<property name="poolConfig" ref="jedisPoolConfig"/>
-		<property name="hostName" value="${redis.cache.host}"/>
-		<property name="port" value="${redis.cache.port}"/>
-	</bean>
+    <!-- 引入ehcache -->
+	<beans:import resource="classpath:spring/ehcache/ehcache.xml"/>
 	
 	
+	 <!-- ehCacheManager工厂类， -->
+    <bean id="ehCacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+	
+    
+     <!-- 声明ehCacheManager -->
+    <bean id="springCacheManager" class="org.walkframework.cache.ehcache.EhCacheCacheManagerDecorator">
+    	<property name="cacheManager">
+    		<bean class="org.springframework.cache.ehcache.EhCacheCacheManager" p:cache-manager-ref="ehCacheManagerFactory"/>
+    	</property>
+    </bean>
+	
+	   
+    <!-- 启用缓存注解驱动 -->
+    <cache:annotation-driven cache-manager="springCacheManager" />
 	
 	
 	
